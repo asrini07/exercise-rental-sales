@@ -41,6 +41,6 @@ class SaleOrder(models.Model):
 
     def action_rental_sales_returned(self):
         for rec in self:
-            rec.rental_status = 'draft'
+            rec.rental_status = 'returned'
 
     
