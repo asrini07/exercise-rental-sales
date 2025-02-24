@@ -18,17 +18,25 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'product', 'sale_management'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/res_group.xml',
+        'security/ir.model.access.csv',
+      
         'views/views.xml',
         'views/templates.xml',
+
+        'views/rental_order_views.xml',
+        'views/rental_product_views.xml',
+        'views/sale_order_views.xml',
+        'views/rental_sales_menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    #"application": True,
 }
 

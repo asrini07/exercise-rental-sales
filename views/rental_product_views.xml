@@ -1,0 +1,34 @@
+<odoo>
+    <record model="ir.actions.act_window" id="rental_product_action">
+        <field name="name">Product Rental</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_product_template_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_rental_products" type="object"
+                    icon="fa-calendar" class="oe_stat_button">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value d-flex gap-1">
+                            <field name="count_rent" widget="statinfo" nolabel="1" class="oe_inline"/>
+                            <field name="uom_name" class="oe_inline"/>
+                        </span>
+                        <span class="o_stat_text">In Rental</span>
+                    </div>
+                </button>     
+            </xpath>
+            <xpath expr="//div[@name='options']" position="inside">
+                <span class="d-inline-flex">
+                    <field name="is_rent" />
+                    <label for="is_rent" widget="boolean" string="Can be Rented" />
+                </span>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_rental_sales_rental_sales,rental_sales.rental_sales,model_rental_sales_rental_sales,base.group_user,1,1,1,1
+access_rental_sales_manager,rental_sales_manager,model_product_template,rental_sales_manager,1,1,1,1
+access_rental_sales_manager,rental_sales_manager,model_sale_order,rental_sales_manager,1,1,1,1

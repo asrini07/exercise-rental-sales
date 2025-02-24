@@ -1,0 +1,7 @@
+<odoo>
+  <data>
+    <record id="rental_sales_manager" model="res.groups">
+      <field name="name">Rental Manager</field>
+    </record>
+  </data>
+</odoo>

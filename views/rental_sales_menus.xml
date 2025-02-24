@@ -1,0 +1,13 @@
+<odoo>
+
+    <!-- Top Menu Item-->
+    <menuitem name="Rental" id="rental_root" />
+
+    <!-- menu categories -->
+    <menuitem name="Orders" id="rental_order" parent="rental_root" />
+    <menuitem name="Products" id="rental_product" parent="rental_root" />
+
+    <!-- actions -->
+    <menuitem name="Products" id="product_list" parent="rental_product" action="rental_product_action" />
+    <menuitem name="Rental" id="order_list" parent="rental_order" action="rental_sales_action" />
+</odoo>
