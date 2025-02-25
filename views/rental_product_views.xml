@@ -11,7 +11,7 @@
         <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
-                <button name="action_rental_products" type="object"
+                <button name="action_open_sale_order" type="object"
                     icon="fa-calendar" class="oe_stat_button">
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_value d-flex gap-1">
