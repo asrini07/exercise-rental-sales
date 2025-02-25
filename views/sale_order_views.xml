@@ -12,8 +12,9 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//sheet/notebook//page[@name='order_lines']//field[@name='order_line']//form//field[@name='product_id']" position="attributes">
-                <attribute name="domain">[('sale_ok', '=', True), ('is_rent', '=', True)]</attribute>
+            <xpath expr="//field[@name='product_template_id']" position="attributes">
+                <attribute name="domain">[('is_rent', '=', True)]</attribute>
+                <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
             </xpath>
             <xpath expr="//header" position="inside">
                 <button name="action_rental_sales_confirm" type="object" string="Confirm" class="btn-primary"/>
