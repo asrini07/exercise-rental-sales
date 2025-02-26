@@ -28,6 +28,7 @@ Long description of module's purpose
         'views/views.xml',
         'views/templates.xml',
 
+        'views/sale_order_list_reserve_views.xml',
         'views/rental_order_views.xml',
         'views/rental_product_views.xml',
         'views/sale_order_views.xml',

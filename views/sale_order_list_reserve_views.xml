@@ -1,0 +1,28 @@
+<odoo>
+
+    <record id="view_sale_order_reserved_tree" model="ir.ui.view">
+        <field name="name">Sale Order Reserved </field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <tree string="Reserved Sale Orders">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="rental_start_date"/>
+                <field name="rental_return_date"/>
+                <field name="duration_days"/>
+                <field name="amount_total"/>
+                <field name="state"/>
+                <field 
+                    name="rental_status"
+                    decoration-success="rental_status == 'reserved'"
+                    decoration-primary="rental_status == 'returned'"
+                    decoration-danger="rental_status == 'cancelled'"
+                    decoration-muted="rental_status == 'draft'"
+                    widget="badge"
+                    optional="show"
+                />
+            </tree>
+        </field>
+    </record> 
+
+</odoo>
