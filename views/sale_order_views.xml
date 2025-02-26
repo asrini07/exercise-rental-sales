@@ -17,7 +17,6 @@
                 <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
             </xpath>
             <xpath expr="//header" position="inside">
-                <button name="action_rental_sales_confirm" type="object" string="Confirm" class="btn-primary"/>
                 <button name="action_rental_sales_reserve" type="object" string="Reserve" class="btn-primary" invisible="state != 'sale' or rental_status != 'draft'"/>
                 <button name="action_rental_sales_returned" type="object" string="Turn In" class="btn-primary" invisible="rental_status in ('draft', 'returned', 'cancelled')"/>
                 <field name="rental_status" widget="statusbar" options="{'clickable': False}" />

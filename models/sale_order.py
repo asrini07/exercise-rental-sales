@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -27,6 +28,17 @@ class SaleOrder(models.Model):
                 rec.duration_days = (return_date - start_date).days
             else:
                 rec.duration_days = 0
+
+    def action_confirm(self):
+        result = super(SaleOrder, self).action_confirm()
+        today = fields.Datetime.now()
+        for record in self:
+            if record.rental_start_date and record.rental_return_date:
+                if record.rental_start_date <= today <= record.rental_return_date:
+                    record.rental_status = "reserved"
+            else:
+                raise ValidationError(_("Start Date and Return Date can not be empty"))
+        return result
 
     def action_rental_sales_confirm(self):
         today = fields.Datetime.now()
