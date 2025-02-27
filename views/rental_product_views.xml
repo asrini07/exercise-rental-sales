@@ -3,6 +3,7 @@
         <field name="name">Product Rental</field>
         <field name="res_model">product.template</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_is_rent': 1}</field>
     </record>
 
     <record id="view_product_template_form_inherit" model="ir.ui.view">
@@ -27,6 +28,19 @@
                     <field name="is_rent" />
                     <label for="is_rent" widget="boolean" string="Can be Rented" />
                 </span>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_product_template_search_inherit" model="ir.ui.view">
+        <field name="name">product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <group string="Filter">
+                    <filter string="Is Rent" name="is_rent" domain="[('is_rent', '=', 1)]" />
+                </group>
             </xpath>
         </field>
     </record>
