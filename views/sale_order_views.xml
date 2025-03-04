@@ -4,6 +4,8 @@
             <field name="name">Sale Order</field>
             <field name="res_model">sale.order</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_rental_order', '=', True)]</field>
+            <field name="context">{'default_is_rental_order': True}</field>
         </record>
     </data>
 
